@@ -10,7 +10,7 @@ on:
 jobs:
   matrix-pip:
     name: Train and save the model
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python: [3.12, 3.13]
@@ -35,7 +35,7 @@ jobs:
       - name: Train the model
         run: |
             python train.py
-            la -la artifacts
+            ls -la artifacts
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
